@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - echo Executing Install Phase
+    finally:
+      - echo Executing Install Finally
+  pre_build:
+    commands:
+      - echo Executing Pre Build Phase
+
+    finally:
+      - echo Executing Pre Build Finally
+  build:
+    commands:
+      - echo Executing Build Phase
+ 
+    finally:
+      - echo Executing Build Finally
+  post_build:
+    commands:
+      - echo Executing Post Build Phase
+      - aws s3 sync . s3://com-techproofing-portfolio --delete --cache-control no-cache
+      # - aws cloudfront create-invalidation --distribution-id ID_GOES_HERE --paths "/*"
+
+    finally:
+      - echo Executing Post Build Finally
