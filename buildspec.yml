@@ -23,8 +23,8 @@ phases:
   post_build:
     commands:
       - echo Executing Post Build Phase
-      - aws s3 sync dist s3://com-techproofing-portfolio --delete --cache-control no-cache
-      # - aws cloudfront create-invalidation --distribution-id ID_GOES_HERE --paths "/*"
+      - aws s3 sync dist s3://io-lukelorenger --delete --cache-control no-cache
+      - aws cloudfront create-invalidation --distribution-id E1NW2WGIWZH0ND --paths "/*"
 
     finally:
       - echo Executing Post Build Finally
