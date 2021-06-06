@@ -2,4 +2,4 @@
 lukelorenger.io
 
  
-Creating Portfolio with JavaScript, jQuery, SaaS, CSS/html
+Creating Portfolio with JavaScript, jQuery, Sass, CSS/html
